@@ -133,8 +133,18 @@ printf("Densidade Populacional: Sua Carta Venceu Aqui (%d)\n", densidade1 > dens
 printf("PIB per Capita: Sua Carta Venceu Aqui (%d)\n", pibpercapita1 > pibpercapita2);
 printf("Super Poder: Sua Carta Venceu Aqui (%d)\n", superpoder1 > superpoder2);
 
+//Comparação Final com a escolha de: População
+printf("\nComparação Final por (População)\n");
+printf("Carta 1 - %s(%c): %lu habitantes\n", nomecidade1, estado1, populacao1);
+printf("Carta 2 - %s(%c): %lu habitantes\n", nomecidade2, estado2, populacao2);
 
-
+if (populacao1 > populacao2){
+    printf("Resultado: Carta 1(%s) venceu!\n", nomecidade1);
+} else if (populacao2 > populacao1){
+    printf("Resultado: Carta 2 (%s) venceu!\n", nomecidade2);
+} else {
+    printf("Resultado: Empate!\n");
+}
 
 
     return 0;
