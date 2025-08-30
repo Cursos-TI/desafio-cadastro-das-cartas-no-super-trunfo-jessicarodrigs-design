@@ -1,94 +1,104 @@
-# Desafio Super Trunfo - Países - Cadastro das Cartas
+🏙️ Super Trunfo - Cartas de Cidades
+Este projeto foi desenvolvido como parte do desafio final da disciplina Introdução à Programação de Computadores da Estácio. O objetivo é implementar a lógica do jogo Super Trunfo em linguagem C, utilizando estruturas de decisão, menus dinâmicos e comparações avançadas entre cartas de cidades brasileiras.
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam os atributos das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países", onde você comparará os atributos das cidades.
+📌 Funcionalidades
+Cadastro de duas cartas com atributos de cidades
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+Exibição clara e organizada dos dados das cartas
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior.  **Você deve escolher qual desafio quer realizar.**
+Menu de comparação simples com escolha de um atributo
 
-🚨 **Atenção:** O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções `scanf` para ler os dados e `printf` para exibi-los.
+Comparação avançada com dois atributos diferentes
 
-## 🎮 Nível Novato: Cadastro Básico
+Regra especial para Densidade Populacional (menor valor vence)
 
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades.  Imagine um país dividido em oito estados (A a H), e cada estado com quatro cidades (1 a 4).  A combinação forma o código da carta (ex: A01, B02).
+Cálculo da soma dos atributos escolhidos
 
-🚩 **Objetivo:** Criar um programa em C que cadastra **duas** cartas com os seguintes atributos:
+Tratamento de empates
 
-*   População (`int`)
-*   Área (`float`)
-*   PIB (`float`)
-*   Número de pontos turísticos (`int`)
+Interface interativa com menus dinâmicos usando switch
 
-⚙️ **Funcionalidades do Sistema:**
+Uso do operador ternário para tornar o código mais elegante
 
-*   O sistema permitirá ao usuário cadastrar os dados de **duas** cartas manualmente via terminal.
-*   Após o cadastro, o sistema exibirá os dados de cada cidade de forma organizada.
+🧠 Atributos disponíveis para comparação
+População
 
-📥 **Entrada** e 📤 **Saída de Dados:**
+Área (km²)
 
-*   O usuário insere os dados de cada carta interativamente via `scanf`.
-*   O programa exibe os dados cadastrados usando `printf`, com cada atributo em uma nova linha.
+PIB (bilhões de reais)
 
-**Simplificações para o Nível Novato:**
+Pontos Turísticos
 
-*   Cadastre apenas **duas** cartas.
-*   Concentre-se na leitura, armazenamento e exibição. Não implemente comparações ou outros recursos.
-*   **Não use** laços (`for`, `while`) ou condicionais (`if`, `else`).
+Densidade Populacional (menor valor vence)
 
+PIB per Capita
 
-## 🛡️ Nível Aventureiro: Cálculo de Atributos
+Super Poder (valor fictício para fins lúdicos)
 
-No nível Aventureiro, você expandirá o sistema para incluir o cálculo de dois novos atributos: Densidade Populacional e PIB per Capita.
+🖥️ Como compilar e executar
+Requisitos:
+Compilador C (como GCC)
 
-🆕 **Diferença em relação ao Nível Novato:**
+Terminal ou IDE compatível (Visual Studio Code, Dev-C++, etc.)
 
-*   **Novos Atributos:**
-    *   Densidade Populacional: População / Área (`float`)
-    *   PIB per Capita: PIB / População (`float`)
+Passos:
+Clone o repositório:
 
-⚙️ **Funcionalidades do Sistema:**
+bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+Acesse a pasta do projeto:
 
-*   O sistema calculará automaticamente a Densidade Populacional e o PIB per Capita.
-*   Os novos atributos serão exibidos junto com os demais.
+bash
+cd seu-repositorio
+Compile o programa:
 
-📥 **Entrada** e 📤 **Saída de Dados:**
+bash
+gcc CartasSuperTrunfo.c -o supertrunfo
+Execute:
 
-*   Mesma entrada do nível Novato.
-*   A saída exibirá também os atributos calculados.
+bash
+./supertrunfo
+📷 Exemplo de uso
+text
+Carta 1:
+Estado: A
+Código: A01
+Cidade: São Paulo
+População: 12300000
+Área: 1521.11
+PIB: 800
+Pontos Turísticos: 15
+Super Poder: 9.5
 
-**Simplificações para o Nível Intermediário:**
+Carta 2:
+Estado: B
+Código: B02
+Cidade: Rio de Janeiro
+População: 6700000
+Área: 1182.3
+PIB: 400
+Pontos Turísticos: 20
+Super Poder: 8.7
 
-*   Continue cadastrando apenas **duas** cartas.
-*   Continue **sem usar** laços (`for`, `while`) ou condicionais (`if`, `else`).
+MENU DE COMPARAÇÃO AVANÇADA
+Escolha o primeiro atributo: 1 (População)
+Escolha o segundo atributo: 4 (Pontos Turísticos)
 
+Resultado:
+População: 12300000 vs 6700000
+Pontos Turísticos: 15 vs 20
+Soma dos atributos:
+São Paulo: 12300015
+Rio de Janeiro: 6700020
+Vencedora: São Paulo
+🛠️ Organização do código
+main() contém o fluxo principal
 
+Comparações simples e avançadas estão separadas por blocos
 
-## 🏆 Nível Mestre: Comparação e Super Poder
+Comentários explicativos em cada etapa
 
-No nível Mestre, você implementará a comparação entre duas cartas e o cálculo do "Super Poder".
+Função auxiliar getValor() para facilitar comparações
 
-🆕 **Diferença em relação ao Nível Aventureiro:**
-
-*   **Comparação de Cartas:** O usuário poderá comparar as duas cartas.
-*   **Super Poder:** Soma de todos os atributos (inclusive os calculados), com a densidade populacional *invertida* antes da soma (1/densidade).  Tipo: `float`.
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   Comparação atributo a atributo, mostrando qual carta venceu (1 se a Carta 1 vence, 0 se a Carta 2 vence).
-*   Para Densidade Populacional, vence a carta com o *menor* valor.
-*   Para os demais atributos (e o Super Poder), vence a carta com o *maior* valor.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada dos níveis anteriores, mas a População agora é `unsigned long int`.
-*   A saída mostrará o resultado da comparação para cada atributo e o Super Poder.
-
-**Observação:**  Preste atenção à conversão de tipos ao calcular o Super Poder!
-
-
-## 🏁 Conclusão
-
-Ao concluir qualquer um dos níveis, você terá dado um passo importante no desenvolvimento do Super Trunfo - Países. Boa sorte e divirta-se programando!
-
-Equipe de Ensino - MateCheck
-content_copy
+📚 Créditos
+Desenvolvido por Jessica como parte do desafio da Estácio. Disciplina: Introdução à Programação de Computadores
